@@ -1,6 +1,6 @@
 <template>
-  <div class="app-container" style="width: 60%">
-    <div class="app-container">
+  <div class="app-container">
+    <div class="el-toolbar">
       <el-button type="success" @click="exportData" plain><i class="fa fa-plus"/>导出数据</el-button>
       <el-button type="primary" @click="importData" plain><i class="fa fa-plus"/>导入数据</el-button>
     </div>
@@ -19,8 +19,6 @@
       <el-table-column prop="dictCode" label="编码" width="180"> </el-table-column>
       <el-table-column prop="createTime" label="创建时间"> </el-table-column>
     </el-table>
-
-
     <!-- 上传文件弹出层 -->
     <el-dialog title="导入数据" :visible.sync="dialogFormVisible" width="500px">
       <el-form label-position="right" label-width="170px">

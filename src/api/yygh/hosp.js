@@ -38,5 +38,12 @@ export default {
             url: `${api_name}/show/${id}`,
             method: 'get'
         })
+    },
+    // 获取科室信息
+    getDeptByHoscode(hoscode){
+        return request({
+            url: `/admin/hosp/department/getDeptList/${hoscode}`,
+            method: 'get'
+        })
     }
 }

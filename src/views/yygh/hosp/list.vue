@@ -52,7 +52,7 @@
             </el-table-column>
 
             <el-table-column prop="hosname" label="医院名称"/>
-            <el-table-column prop="param.hosTypeName" label="等级" width="90"/>
+            <el-table-column prop="param.hosType" label="等级" width="90"/>
             <el-table-column prop="param.fullAddress" label="详情地址"/>
             <el-table-column label="状态" width="80">
                 <template slot-scope="scope">

@@ -5,7 +5,7 @@
             <tbody>
                 <tr>
                     <th width="15%">医院名称</th>
-                    <td width="35%"><b style="font-size: 14px">{{ hospital.hosname }}</b> | {{ hospital.param.hostypeString }}</td>
+                    <td width="35%"><b style="font-size: 14px" v-text="hospital.hosname"></b> | {{ hospital.param.hosType}}</td>
                     <th width="15%">医院logo</th>
                     <td width="35%">
                         <img :src="'data:image/jpeg;base64,'+hospital.logoData" width="80">

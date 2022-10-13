@@ -93,7 +93,15 @@ export const constantRoutes = [
         component: () => import('@/views/yygh/hosp/show'),
         meta: { title: '查看', noCache: true},
         hidden: true
+      },
+      {
+        path: 'hospital/schedule/:hoscode',
+        name: '排班',
+        component: () => import('@/views/yygh/hosp/schedule'),
+        meta: { title: '排班', noCache: true},
+        hidden: true
       }
+
     ]
   },
   // 数据字典管理
