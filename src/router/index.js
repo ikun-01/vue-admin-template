@@ -121,6 +121,36 @@ export const constantRoutes = [
       }
     ]
   },
+  // 用户管理
+  {
+    path: '/user',
+    component: Layout,
+    redirect: 'user/userinfo/list',
+    name: 'userinfo',
+    meta: {title: '用户管理', icon: 'table'},
+    alwaysShow: true,
+    children: [
+      {
+        path: 'userinfo/list',
+        name: '用户列表',
+        component: () => import('@/views/user/userinfo/list'),
+        meta: {title: '用户列表',icon: 'table'}
+      },
+      {
+        path: 'userinfo/show/:id',
+        name: '用户查看',
+        component: () => import('@/views/user/userinfo/show'),
+        meta: {title: '用户查看'},
+        hidden: true
+      },
+      {
+        path: 'userinfo/authList',
+        name: '认证审批列表',
+        component: () =>import('@/views/user/userinfo/authList'),
+        meta: { title: '认证审批列表', icon: 'table' }
+      }
+    ]
+  },
 
   {
     path: 'external-link',
