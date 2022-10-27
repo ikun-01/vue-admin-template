@@ -5,7 +5,7 @@
         <el-input v-model="hospset.hosname"></el-input>
       </el-form-item>
       <el-form-item label="医院编码">
-        <el-input v-model="hospset.hoscode"></el-input>
+        <el-input v-model="hospset.hoscode" :readonly="readonly"></el-input>
       </el-form-item>
       <el-form-item label="API地址">
         <el-input v-model="hospset.apiUrl"></el-input>
@@ -31,7 +31,8 @@ export default {
     return {
       hospset: {},
       // 是否禁用按钮防止重复提交
-      saveBtnDisabled: false
+      saveBtnDisabled: false,
+      readonly: false
     }
   },
   methods: {
@@ -73,6 +74,11 @@ export default {
           path: "/yygh/hospset/list"
         })
       }).catch(reponse=>{
+        this.$message({
+          showClose: true,
+          message: reponse,
+          type:'warning'
+        })
         this.saveBtnDisabled = false
       })
     },
@@ -104,6 +110,7 @@ export default {
   },
   created(){
     if (this.$route.params && this.$route.params.id) {
+      this.readonly = true
       const id = this.$route.params.id
       this.fetchDataById(id)
     }
